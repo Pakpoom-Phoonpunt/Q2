@@ -21,6 +21,6 @@ class Choice(models.Model):
 
     question = models.ForeignKey(Question, on_delete=models.CASCADE) #บอกว่าเป็นตัวเลือกของคำถามข้อไหน
     choice_text = models.CharField(max_length=200) #เก็บชื่อตัวเลือก
-
+    votes = models.IntegerField(default=0)
     def __str__(self):
         return self.choice_text #แสดงชื่อตัวเลือก
